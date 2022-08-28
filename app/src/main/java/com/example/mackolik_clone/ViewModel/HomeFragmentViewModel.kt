@@ -14,13 +14,13 @@ class HomeFragmentViewModel : ViewModel() {
 
         val myList = apiService.getDataService().awaitResponse()
 
+
         if (myList.isSuccessful){
-           val list = myList.body()
-            for (i in list!!){
-                println(i.title)
-            }
+            println(myList.body())
+
         }else if (!myList.isSuccessful){
-            println("Başarısız döndü")
+            val e = myList.raw()
+            println(e)
         }
         else{
             println("Hiçbir şey dönmedi")

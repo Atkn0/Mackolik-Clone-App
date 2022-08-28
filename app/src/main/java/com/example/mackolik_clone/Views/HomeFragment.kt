@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.example.mackolik_clone.R
 import com.example.mackolik_clone.ViewModel.HomeFragmentViewModel
 import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -32,7 +33,7 @@ class HomeFragment : Fragment() {
     @OptIn(DelicateCoroutinesApi::class)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        GlobalScope.launch {
+        GlobalScope.launch{
             homeFragmentViewModel.getDataFromApi()
         }
 
